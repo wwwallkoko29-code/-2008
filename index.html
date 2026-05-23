@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>منصة التعليم الذكي</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* ===== Search ===== */
+.search-box {
+  margin-top: 15px;
+}
+
+.search-box input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* ===== Container ===== */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: white;
+  width: 250px;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #4e4376;
+  font-weight: bold;
+}
+
+/* ===== Video ===== */
+iframe {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+  margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>📚 منصة التعليم الذكي</h1>
+  <p>شرح المناهج - صف 9 و 12 - كردي و إنجليزي</p>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="ابحث عن درس أو مادة...">
+  </div>
+</header>
+
+<div class="container" id="container">
+
+  <!-- الصف التاسع -->
+  <div class="card">
+    <h3>📘 الصف التاسع</h3>
+    <a href="#">رياضيات</a>
+    <a href="#">كيمياء</a>
+    <a href="#">فيزياء</a>
+
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </div>
+
+  <!-- الصف 12 -->
+  <div class="card">
+    <h3>📗 الصف 12</h3>
+    <a href="#">رياضيات</a>
+    <a href="#">أحياء</a>
+    <a href="#">إنجليزي</a>
+
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </div>
+
+  <!-- كردي -->
+  <div class="card">
+    <h3>🟡 اللغة الكردية</h3>
+    <a href="#">قواعد</a>
+    <a href="#">قراءة</a>
+
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </div>
+
+  <!-- إنجليزي -->
+  <div class="card">
+    <h3>🔵 English</h3>
+    <a href="#">Grammar</a>
+    <a href="#">Vocabulary</a>
+
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 - جميع الحقوق محفوظة | منصة التعليم الذكي
+</footer>
+
+<!-- ===== Search Script ===== -->
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", function() {
+  let value = this.value.toLowerCase();
+
+  cards.forEach(card => {
+    if (card.innerText.toLowerCase().includes(value)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
